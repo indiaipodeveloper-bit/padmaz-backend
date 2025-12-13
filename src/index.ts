@@ -8,7 +8,6 @@ import { OrderRouter } from "./routes/OrderRoutes.js";
 import { CartRouter } from "./routes/CartRoutes.js";
 import { ProductRouter } from "./routes/ProductsRoutes.js";
 import { CheckUserLoggedIn } from "./middleware/Auth.js";
-import { Product } from "./models/ProductModel.js";
 dotenv.config();
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
@@ -35,9 +34,8 @@ app.use("/api/cart", CheckUserLoggedIn, CartRouter);
 app.use("/api/products", ProductRouter);
 app.use("/api/order", CheckUserLoggedIn, OrderRouter);
 
-app.get("/", async (req, res) => {
-  const products = await Product.find({});
-  return res.json({ products });
+app.get("/", (req, res) => {
+  return res.send("padmaz ecommerce backend");
 });
 
 connectDB(process.env.DB_URI || "mongodb://127.0.0.1:27017/padmaz").then(() => {
