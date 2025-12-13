@@ -15,7 +15,4 @@ dist-ssr
 *.local
 temp.js
 # Editor directories and files
-credentials.json
 .env
-uploads
-padmaz.json
