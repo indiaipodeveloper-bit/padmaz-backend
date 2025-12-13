@@ -7,7 +7,7 @@ import {
 
 const router: Router = Router();
 
-router.post("/place-order", CheckUserLoggedIn, CreateOrderForRazorpay);
+router.post("/place-order", CreateOrderForRazorpay);
 router.post(
   "/payment-verification",
   CheckUserLoggedIn,

@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://padmas.vercel.app/"],
     credentials: true,
     maxAge,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
